@@ -7,23 +7,50 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {Platform, StyleSheet, Text, View, TouchableOpacity,
+Image} from 'react-native';
+import ImagePicker from 'react-native-image-picker';
 
 type Props = {};
 export default class App extends Component<Props> {
+
+  state = {
+    uri: ""
+  };
+
+  // 画像選択画面を開く
+  openPicker = () => {
+    ImagePicker.showImagePicker({}, res => {
+      if (res.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (res.error) {
+        console.log('ImagePicker Error: ', res.error);
+      } else if (res.customButton) {
+        console.log('User tapped custom button: ', res.customButton);
+      } else {
+        const source = { uri: res.uri };
+        // 選択した画像uriをstateに保存
+        this.setState(source);
+      }
+    });
+  };
+
+  upload = () => {};
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Image source={{ uri: this.state.uri }} style={styles.image} />
+        <TouchableOpacity
+          style={styles.button}
+          onPress={this.openPicker}>
+          <Text>Open</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={this.upload}>
+          <Text>Send</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -36,14 +63,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  image: {
+    width: '100%',
+    height: 200,
+    backgroundColor: '#EEE'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  button: {
+    padding: 20,
+  }
 });
