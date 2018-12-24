@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, TouchableOpacity,
 Image} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
+import Firebase from 'react-native-firebase';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -35,7 +36,17 @@ export default class App extends Component<Props> {
     });
   };
 
-  upload = () => {};
+  upload = () => {
+    // Firebaseへ画像アップロード
+    Firebase.storage()
+      .ref('images/' + new Date().getTime())
+      .putFile(this.state.uri, { contentType: 'image/jpeg' })
+      // アップロード完了したらアラート表示
+      .then(() => alert('Uploaded')).catch(e => {
+        console.log(e);
+        alert('Error');
+      });
+  };
 
   render() {
     return (
