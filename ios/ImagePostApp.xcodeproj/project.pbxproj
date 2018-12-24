@@ -37,8 +37,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* ImagePostAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ImagePostAppTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		A82170B2D1DB86B651713ECF /* Pods_ImagePostApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219513D6E89A4C2A7CEE54B2 /* Pods_ImagePostApp.framework */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		D457542421D0C71B00D1F710 /* Pods_ImagePostApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 219513D6E89A4C2A7CEE54B2 /* Pods_ImagePostApp.framework */; };
 		D4DC941121CD27EF00F88CA6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4DC941021CD27EF00F88CA6 /* GoogleService-Info.plist */; };
 		EA7E477738F64DF3A7544457 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB573ECB82A4D1487B10AC1 /* libRNFirebase.a */; };
 		F905E19CFF9E4FF08D02EECB /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C05090D703C4C0CBAFBCE9D /* libRNImagePicker.a */; };
@@ -384,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D457542421D0C71B00D1F710 /* Pods_ImagePostApp.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -398,7 +399,6 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				F905E19CFF9E4FF08D02EECB /* libRNImagePicker.a in Frameworks */,
 				EA7E477738F64DF3A7544457 /* libRNFirebase.a in Frameworks */,
-				A82170B2D1DB86B651713ECF /* Pods_ImagePostApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1373,6 +1373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
@@ -1397,6 +1398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",

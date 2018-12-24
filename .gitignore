@@ -46,6 +46,7 @@ buck-out/
 */fastlane/Preview.html
 */fastlane/screenshots
 /ios/ImagePostApp/GoogleService-Info.plist
+/ios/GoogleService-Info.plist
 /android/app/google-services.json
 #CocoaPod
 /ios/Pods
